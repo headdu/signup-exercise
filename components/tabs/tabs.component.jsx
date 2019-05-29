@@ -12,7 +12,11 @@ const Tabs = ({ tabArray, className }) => {
   return (
     <S.TabsContainer className={className}>
       {tabArray.map((t, idx) => (
-        <S.Tab key={idx} selected={selected === idx} onClick={getOnTabClick(t, idx)}>
+        <S.Tab
+          key={idx}
+          selected={selected === idx}
+          onClick={getOnTabClick(t, idx)}
+        >
           {t.label}
         </S.Tab>
       ))}

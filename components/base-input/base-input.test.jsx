@@ -15,7 +15,11 @@ describe("Base Input Tests", () => {
 
   test("Renders the label correctly", () => {
     const { queryByLabelText } = render(
-      <BaseInput name="test-input" placeholder="Test placeholder" title="Label"/>
+      <BaseInput
+        name="test-input"
+        placeholder="Test placeholder"
+        title="Label"
+      />
     );
 
     expect(queryByLabelText("Label")).toBeTruthy();
@@ -23,7 +27,10 @@ describe("Base Input Tests", () => {
 
   test("Renders a given value correctly", () => {
     const { queryByDisplayValue } = render(
-      <BaseInput placeholder="Test placeholder" controlledValue={'test value'} />
+      <BaseInput
+        placeholder="Test placeholder"
+        controlledValue={"test value"}
+      />
     );
 
     expect(queryByDisplayValue("test value")).toBeTruthy();
@@ -31,10 +38,12 @@ describe("Base Input Tests", () => {
 
   test("The value is changed correctly", () => {
     const { queryByDisplayValue, queryByPlaceholderText } = render(
-      <BaseInput placeholder="Test placeholder"/>
+      <BaseInput placeholder="Test placeholder" />
     );
 
-    fireEvent.input(queryByPlaceholderText("Test placeholder"), {target: {value: 'test value'}})
+    fireEvent.input(queryByPlaceholderText("Test placeholder"), {
+      target: { value: "test value" }
+    });
 
     expect(queryByDisplayValue("test value")).toBeTruthy();
   });
@@ -42,10 +51,15 @@ describe("Base Input Tests", () => {
   test("The value is changed correctly and calls controlled onChange", () => {
     const onChangeControl = jest.fn();
     const { queryByDisplayValue, queryByPlaceholderText } = render(
-      <BaseInput placeholder="Test placeholder" onChangeControl={onChangeControl}/>
+      <BaseInput
+        placeholder="Test placeholder"
+        onChangeControl={onChangeControl}
+      />
     );
 
-    fireEvent.input(queryByPlaceholderText("Test placeholder"), {target: {value: 'test value'}})
+    fireEvent.input(queryByPlaceholderText("Test placeholder"), {
+      target: { value: "test value" }
+    });
 
     expect(queryByDisplayValue("test value")).toBeTruthy();
     expect(onChangeControl).toHaveBeenCalled();

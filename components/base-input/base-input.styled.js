@@ -35,7 +35,7 @@ export const BaseInput = styled.input`
   }
 
   :active:not(:disabled) {
-      opacity: 0.7;
+    opacity: 0.7;
   }
 `;
 

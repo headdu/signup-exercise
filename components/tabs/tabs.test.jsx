@@ -1,47 +1,51 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "react-testing-library";
-import { matchers } from 'jest-emotion'
+import { matchers } from "jest-emotion";
 import Tabs from "./tabs.component";
 
-expect.extend(matchers)
+expect.extend(matchers);
 
 afterEach(cleanup);
 
 describe("Tabs Tests", () => {
   test("Renders the provided tabs correctly", () => {
-    const twoTabs = [{
-        label: 'One',
+    const twoTabs = [
+      {
+        label: "One",
         onClick: () => {}
-    },
-    {
-        label: 'Two',
+      },
+      {
+        label: "Two",
         onClick: () => {}
-    }];
-    
-    const { queryByText } = render(<Tabs tabArray={twoTabs}/>);
+      }
+    ];
+
+    const { queryByText } = render(<Tabs tabArray={twoTabs} />);
 
     expect(queryByText("One")).toBeTruthy();
     expect(queryByText("Two")).toBeTruthy();
   });
 
   test("The selected element should change on click", () => {
-    const twoTabs = [{
-        label: 'One',
+    const twoTabs = [
+      {
+        label: "One",
         onClick: () => {}
-    },
-    {
-        label: 'Two',
+      },
+      {
+        label: "Two",
         onClick: () => {}
-    }];
-    
-    const { queryByText } = render(<Tabs tabArray={twoTabs}/>);
+      }
+    ];
 
-    expect(queryByText("One")).not.toHaveStyleRule('background', '#fff');
-    expect(queryByText("Two")).toHaveStyleRule('background', '#fff');
+    const { queryByText } = render(<Tabs tabArray={twoTabs} />);
+
+    expect(queryByText("One")).not.toHaveStyleRule("background", "#fff");
+    expect(queryByText("Two")).toHaveStyleRule("background", "#fff");
 
     fireEvent.click(queryByText("Two"));
 
-    expect(queryByText("One")).toHaveStyleRule('background', '#fff');
-    expect(queryByText("Two")).not.toHaveStyleRule('background', '#fff');
+    expect(queryByText("One")).toHaveStyleRule("background", "#fff");
+    expect(queryByText("Two")).not.toHaveStyleRule("background", "#fff");
   });
 });

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import * as S from "./checkbox.styled.js";
 
-const Checkbox = ({ controlledValue, name, disabled, setControlledValue, className, ...rest }) => {
+const Checkbox = ({
+  controlledValue,
+  name,
+  disabled,
+  setControlledValue,
+  className,
+  ...rest
+}) => {
   const [value, setValue] = useState(
     controlledValue !== undefined ? controlledValue : false
   );

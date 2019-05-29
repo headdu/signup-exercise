@@ -31,12 +31,12 @@ export const CheckboxContainer = styled.button`
   }
 
   :active:not(:disabled) {
-      opacity: 0.7;
+    opacity: 0.7;
   }
 
   :disabled {
-      color: lightgray;
-      border-color: lightgray;
-      cursor: default;
+    color: lightgray;
+    border-color: lightgray;
+    cursor: default;
   }
 `;

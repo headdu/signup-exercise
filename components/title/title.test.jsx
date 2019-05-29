@@ -6,8 +6,7 @@ afterEach(cleanup);
 
 describe("Title Tests", () => {
   test("Renders the provided title correctly", () => {
-    
-    const { queryByText } = render(<Title title={'Title'}/>);
+    const { queryByText } = render(<Title title={"Title"} />);
 
     expect(queryByText("Title")).toBeTruthy();
   });
