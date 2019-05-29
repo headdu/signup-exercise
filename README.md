@@ -1,4 +1,5 @@
 This project was built with your existing stack in mind (Next.js, emotion, jest and storybook)
+The package manager used was `yarn`
 
 Main folders are:
 - components, where every component has 4 types of files for easier navigating:
