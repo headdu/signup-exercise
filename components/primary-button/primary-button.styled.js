@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 
-const buttonHeight = 64;
+const buttonHeight = 40;
 
 export const PrimaryButton = styled.button`
-  padding: 0 32px;
+  padding: 0 16px;
   background-color: ${props => props.backgroundColor};
-  font-size: 24px;
+  font-size: 16px;
   border-radius: 2px;
   color: ${props => props.color};
   font-weight: bold;

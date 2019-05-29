@@ -8,7 +8,9 @@ const BaseInput = ({
   disabled,
   type = "text",
   name,
-  title
+  title,
+  className,
+  ...rest
 }) => {
   const [value, setValue] = useState(controlledValue || "");
 
@@ -20,7 +22,7 @@ const BaseInput = ({
   };
 
   return (
-    <S.InputContainer>
+    <S.InputContainer className={className}>
       {title ? <S.InputLabel htmlFor={name}>{title}</S.InputLabel> : null}
       <S.BaseInput
         id={name}
@@ -30,6 +32,7 @@ const BaseInput = ({
         placeholder={placeholder}
         disabled={disabled}
         type={type}
+        {...rest}
       />
     </S.InputContainer>
   );

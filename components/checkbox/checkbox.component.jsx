@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "./checkbox.styled.js";
 
-const Checkbox = ({ controlledValue, name, disabled, setControlledValue }) => {
+const Checkbox = ({ controlledValue, name, disabled, setControlledValue, className, ...rest }) => {
   const [value, setValue] = useState(
     controlledValue !== undefined ? controlledValue : false
   );
@@ -19,6 +19,7 @@ const Checkbox = ({ controlledValue, name, disabled, setControlledValue }) => {
       type="button"
       onClick={toggleValue}
       disabled={disabled}
+      className={className}
     >
       <S.CheckboxInput
         id={name}
@@ -26,6 +27,7 @@ const Checkbox = ({ controlledValue, name, disabled, setControlledValue }) => {
         type="checkbox"
         value={value}
         disabled={disabled}
+        {...rest}
       />
       {value ? <>&#10003;</> : ""}
     </S.CheckboxContainer>

@@ -13,6 +13,8 @@ export const CheckboxContainer = styled.button`
   border: 1px solid ${baseColor};
   min-width: ${checkboxDimension}px;
   min-height: ${checkboxDimension}px;
+  max-width: ${checkboxDimension}px;
+  max-height: ${checkboxDimension}px;
   line-height: ${checkboxDimension}px;
   text-align: center;
   font-size: 12px;
